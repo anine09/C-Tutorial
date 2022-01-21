@@ -1,37 +1,143 @@
-## Welcome to GitHub Pages
+# 玖佰的 C 语言之旅
 
-You can use the [editor on GitHub](https://github.com/anine09/C-Tutorial/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+Dedicated to Hyh. —— Epsilon Luoo, 2022.01.31
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 前言（未完待续）
 
-### Markdown
+很高兴这个教程终于跟你见面了。大概10月末，我就开始着手编写一个关于 C 语言的通俗易懂的教程，当然，主要是为了你以后万一要学 C 语言的课，提前做的准备。~~我看过你们的培养计划，你们可以在很多门课里面选一门。~~
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![1642762512463.png](image/textbook/1642762512463.png)
 
-```markdown
-Syntax highlighted code block
+不用说，我肯定是建议选 **C 语言**，
 
-# Header 1
-## Header 2
-### Header 3
+## 环境配置
 
-- Bulleted
-- List
+想让代码在电脑上运行起来？这是很多人被 C 语言劝退的第一步。我已经把该下载的东西打包好了，点链接下载就行了。如果只是为了应付应付作业，考试什么的，期末过了之后再也不想再碰 C 语言了，那我推荐的是 ***啊哈 C*** 。如果以后还会接触编程，然后又想要更棒更酷的体验，我推荐 ***VScode + MinGW***。
 
-1. Numbered
-2. List
+* ### 前期准备
 
-**Bold** and _Italic_ and `Code` text
+我个人建议，找个自己记得住的位置（比如说 **桌面** 、**文档** 这种地方），新建个文件夹，用来存放全部跟编程有关的东西，命名为 **“Coding”** 或者 **其他什么名字** （“Coding”的意思是“写代码”）。然后在文件夹里面 **新建两个文件夹**，命名为 **Software**（用来放写代码要用的软件） 和 **C** （用来放你写的代码）。这样要是不想再写代码了，直接把 **Coding** 扔到回收站就行了。（当然，要先卸载相关软件，再删文件）。
+![](image/textbook/1642763334492.png)
 
-[Link](url) and ![Image](src)
+* ### 使用“啊哈 C”运行 C 语言程序
+
+1. 下载 [***啊哈 C***](https://static.codeaha.com/app/AhaCppInstall.exe) （如果这个[**链接**](https://static.codeaha.com/app/AhaCppInstall.exe)点不开的话,请及时[**联系我**](mailto:anine09@pm.me)）。
+2. 运行安装程序，点击右下角的**自定义安装**。建议把安装路径改成刚刚的 **Software**。
+
+   ![1642762448762.png](image/textbook/1642762448762.png)
+3. 这里注意一下, **不要勾选开机自启动**，自启动太多了电脑会特别卡，没必要自启的就不用勾。
+
+   ![img](image/textbook/1642763534526.png)
+
+   至于这个**添加桌面快捷方式**，我个人是不喜欢，我习惯用 utools 来启动我的软件，为了让桌面保持干净，看的清楚我的壁纸。
+4. 安装完成之后，点**立即体验**。它应该会要求登陆，随便选个登陆方式就行了，我这次是微信扫一扫。
+   ![img](image/textbook/1642764539952.png)
+
+   后面它又会要求绑定手机，在下方有个**以后再说**。
+
+   ![img](image/textbook/1642764635245.png)
+5. 如果选择了创建快捷方式，这时候桌面会有俩东西。**啊哈 C** 和 **啊哈 C++**。
+
+   ![img](image/textbook/1642764825964.png)
+
+   它俩对我们现在的教程来说用谁都一样，当然，用 **啊哈 C** 更好，我现在是 C++ 方向的，我在写这个教程的时候还在头痛，想着怎么样才不会不小心把 C 语言的代码写成 C++ 的。
+6. 打开 **啊哈 C** 之后我们会看到这样的界面。
+
+   ![img](image/textbook/1642765150006.png)
+
+   当然，我们现在还没有正式的学习怎么写代码，所以我这里先写个简单的测试程序。你会看到，我把图中**第5行**（也就是 ***return 0;***  的前面）添加了一行代码：
+
+   ```c
+   prinf("Hyh.");
+   ```
+
+   我们暂时不用管这行代码代表什么，继续操作就行了。
+7. 我们点击上面的**运行**按钮。
+
+   ![](image/textbook/1642765667122.png)
+
+   这个时候，它会弹出一个文件选择框。我们在这个选择框里面打开之前新建好的 **C** 文件夹，再在下面给这个代码文件起个名字，就叫 **test** 吧，虽然有点随意。**再保存就行了**。
+
+   ![](image/textbook/1642766006677.png)
+
+   只要你的电脑弹出了一个跟我下面这个图一样的黑不溜秋的框框，那就成功了，恭喜！
+
+   ![](image/textbook/1642765995932.png)
+
+* ### 使用“VSCode”运行 C 语言程序 （未完待续）
+
+---
+
+## 第一行代码
+在配置好环境之后，我们就可以写下我们的第一行代码啦。在这里我介绍个程序员的传统，一般在新电脑配置好之后，我们的第一行代码都是 _Hello，World！_ 用来检查环境是否配置成功，代码是否可以正常运行。下面我们就以 _Hello，World！_ 的代码为例，进行详细的分析。 
+```c
+#include<stdio.h>
+
+int main(){
+    
+    printf("Hello，World！");
+
+    return 0;
+}
+```
+你以后会很清楚的看见，我写的代码会跟其他的教材上的空格换行符号啥的不太一样，这是我的编码风格，只是为了简洁好看，<u>不影响程序运行</u>。有时候我会省略一些东西，同样的也不影响程序的运行，我不喜欢一开头就扔一大堆看不懂的东西给新手，除了让他们更讨厌学 C 语言之外什么用都没有。
+### 头文件
+
+首先我们来看第一行代码
+```c
+#include<stdio.h>
+```
+这行代码表示，我要借用一个工具箱，工具箱的名字叫  _**stdio.h**_ ，它是个**头文件**（ .h 代表 head ） ， _**stdio**_ 其实就是 **Standard Input Output （标准输入输出）** 的简写，我们不需要死盯概念，这是我认为初学者不好学 C 语言的问题所在，一开头就乱七八糟的专有名词，搞得大家都没兴趣继续学下去了。  
+
+我们这样理解，写程序会用到一些别人早就帮我们写好的代码，这个概念你以后会经常用到，就是：我们会经常用别人早就写好的代码。在业内有句话：**“不要重复发明轮子。”** 所以，引用别人的代码是件习以为常的事情。回到这个地方,  _**#include<XXX.h>**_ 就相当于告诉计算机，我需要借用一个叫做 **XXX.h** 的工具箱，现在在这个程序中，工具箱的名字就是 _**stdio.h**_，这个工具箱里面包含了你以后会经常用到的两个工具（当然它里面不止两个工具，我们以后可能会深入讨论它） ， _**printf()**_ 和 _**scanf()**_，放心，我后面肯定会详细介绍它们的，再给你预告一下，你以后可能会经常用到另一个工具箱，叫做 _**math.h**_，“箱”如其名，它里面有很多跟数学有关的工具。那么我们怎么使用它呢，当然是依葫芦画瓢啦。把**下面的代码**写在**开头**，第一行啊第二行这种位置，只要保证它在 _**int main()**_ 的前面就行了。
+```c
+#include<math.h>
+```
+### 程序入口
+第二行代码是
+```c
+int main(){
+
+
+}
+```
+在英语中，**main** 有 **主要的** 的意思，所以我们习惯把 _**main()**_ 称为主函数。这里的概念有些复杂，我打算留到后面讲，目前你需要了解：C语言的代码都是从 _**main()**_ 的花括号 **{ }** 中的内容开始的，也就是说， _**int main(){XXX}**_ 中的 **XXX** 将是第一行被运行的代码，OK，我们甚至也不需要了解这个概念，在后面编译的 part 我们会更深入的讨论这个问题。**注意！！！ 不要把 main() 写成 mian() 不要写成 面函数，人家叫主函数，** 实在是见过太多人这样写了，一弄反，程序就会报一大堆乱七八糟的你暂时还看不懂的英文出来，多注意一下，我相信你是个很细心的人。
+### 主函数返回值
+还有个代码，它是长这样的：
+```c
+return 0;
+```
+每一个函数都有返回值，就像数学的函数代值进去能算出 **y** 一样。这句话代表着使用 _**main()**_ 函数后，计算机会回馈个 0 给你，来表示你的程序是正常的结束了，当然，你不用特殊手段是**看不到这个 0 的**，目前我们不必深究这个，后面我会详细讲解。**不要忘了结尾有个分号 ";"。**
+### 模板
+这个是一个好习惯，我希望你每次写 C 语言的时候，能想都不想的先打出下面的代码。
+```c
+#include<stdio.h>
+
+int main(){
+
+
+    return 0;
+}
+```
+相信我，多练习几次，多打几次，手就记下来了，很有用。**不要忘了分号。**
+### 输出函数
+看看这行代码
+```c
+printf("Hello,World!");
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+输出有多种形式和方法，叫 _**printf()**_ 输出函数其实不严谨，不然我们叫它**打印函数**吧哈哈哈哈，它的功能就是把你写在 **引号里 "XXX"** 的一些**XXX**，显示在那个黑不溜秋的框框里面，一般我们会写 **Hello,World!** 这是我们的传统。讲个笑话，我们 C 语言的老师把 **World** 写成了 **Word** 。下面这个图就是当时他发给我们的文件，我觉得这个老师，挺啰嗦的，老是絮絮叨叨的。
 
-### Jekyll Themes
+![Hello Word](https://z3.ax1x.com/2021/10/28/5byBM4.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anine09/C-Tutorial/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+你可能在书上看到的更多的是这个代码：  
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```c
+prinf("Hello,World!\n");
+```
+这里的 _**\n**_，是一种**转义符**，代表将光标另起一行，就跟你打完字按个回车的效果一样。本着不必要就不多讲的原则，我们先不用了解**转义符**的概念，后面有的是时间讲。
+  
+我们回到 _**printf()**_ 的上面去。你说这个 **print** 我认识，不就是**打印**嘛。但是它为什么要写成 **printf** 啊，看着特别别扭。其实这个 **f** 代表的是格式化的意思 **format。** 我们可以类比下之前稍微提过一次的  _**scanf()**_  函数，它也是英语单词 **扫描** 加了个格式化（**scan + f**）。什么叫**格式化输入输出**我们以后会很详细的讨论。**不要忘了结尾要写分号！**
+### 小结
+我们好不容易能够读懂了第一个程序，
